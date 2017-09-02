@@ -30,10 +30,13 @@ while len(tweet) == 0:
 
 
 tweet = tweet[0:136] + "..."
+tweet2 = "No hay más vida, no hay un solo partido de oposición a quien los adversarios gobernantes no motejen de comunista, ni un solo partido de ..."
 
 print (tweet)
-
 try:
-	api.update_status(status=tweet)
+	api.update_status(status=tweet2)
+	ask = input("tweet? 0/1")
+	if ask == 1:
+		api.update_status(status=tweet)
 except tweepy.TweepError as e:
         print (e.reason)
